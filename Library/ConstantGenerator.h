@@ -5,7 +5,7 @@
 
 namespace algebra 
 {
-    enum FillType { MANUAL, RANDOM, CONSTANT };
+    enum FillType { MANUAL, RANDOM};
 
     class ConstantGenerator : public Generator
     {

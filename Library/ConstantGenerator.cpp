@@ -14,9 +14,6 @@ namespace algebra
             }
             case RANDOM:
                 return min_val + rand() % (max_val - min_val + 1);
-            case CONSTANT:
-            default:
-                return constant_value;
         }
     }
 }

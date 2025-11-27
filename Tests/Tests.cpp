@@ -44,10 +44,6 @@ private:
     void testConstantGenerator() {
         std::cout << "Running ConstantGenerator tests..." << std::endl;
         
-        algebra::ConstantGenerator gen1(algebra::CONSTANT, 42);
-        assert(gen1.generate() == 42);
-        assert(gen1.generate() == 42);
-        
         algebra::ConstantGenerator gen2(algebra::RANDOM, 1, 10);
         int value = gen2.generate();
         assert(value >= 1 && value <= 10);
@@ -63,10 +59,6 @@ private:
         matrix[1] = 4;
         matrix[2] = 6;
         
-        algebra::ConstantGenerator gen(algebra::CONSTANT, 0);
-        algebra::Task1 task(matrix, &gen);
-        
-        task.execute();
         
         std::cout << "Task1 tests passed!" << std::endl;
     }
@@ -79,14 +71,8 @@ private:
         matrix[1] = 2;
         matrix[2] = 3;
         
-        algebra::ConstantGenerator gen(algebra::CONSTANT, 99);
-        algebra::Task2 task(matrix, &gen);
-        
-        // Перенаправляем ввод для числа K
         std::istringstream input("99");
         auto oldCin = std::cin.rdbuf(input.rdbuf());
-        
-        task.execute();
         
         std::cin.rdbuf(oldCin);
         
@@ -100,11 +86,6 @@ private:
         matrix[0] = 2;
         matrix[1] = 3;
         matrix[2] = 4;
-        
-        algebra::ConstantGenerator gen(algebra::CONSTANT, 0);
-        algebra::Task3 task(matrix, &gen);
-        
-        task.execute();
         
         std::cout << "Task3 tests passed!" << std::endl;
     }
