@@ -1,18 +1,17 @@
 #include "Exercise.h"
 
-namespace algebra {
-
-Exercise::Exercise(const Matrix<int>& m, Generator* gen) : matrix(m), generator(gen) 
+namespace algebra 
 {
-}
+    Exercise::Exercise(const Matrix<int>& m, Generator* gen) : matrix(m), generator(gen) 
+    {
+    }
 
-Exercise::~Exercise()
-{
-}
+    Exercise::~Exercise()
+    {
+    }
 
-Matrix<int> Exercise::getMatrix() const 
-{ 
-    return matrix; 
-}
-
+    Matrix<int> Exercise::getMatrix() const 
+    { 
+        return matrix; 
+    }
 }

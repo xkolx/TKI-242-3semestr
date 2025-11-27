@@ -1,18 +1,14 @@
 #pragma once
-#include "Matrix.h"
+#include "Exercise.h"
 #include <cmath>
 
-namespace algebra {
-
-class Task3
+namespace algebra 
 {
-private:
-    Matrix<int> matrix;
-    
-public:
-    Task3(const Matrix<int>& m) : matrix(m) {}
-    
-    Matrix<int> execute();
-};
-
+    class Task3 : public Exercise
+    {
+    public:
+        Task3(const Matrix<int>& m, Generator* gen) : Exercise(m, gen) {}
+        
+        void execute() override;
+    };
 }

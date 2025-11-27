@@ -1,28 +1,28 @@
 #include "Task3.h"
+#include <iostream>
 
-namespace algebra {
-
-Matrix<int> Task3::execute()
+namespace algebra 
 {
-    Matrix<int> result(matrix.size());
-    
-    for (size_t i = 0; i < matrix.size(); i++)
+    void Task3::execute()
     {
-        if (i == 0 || i == matrix.size() - 1)
+        Matrix<int> result(matrix.size());
+        
+        for (size_t i = 0; i < matrix.size(); i++)
         {
-            result[i] = 0;
+            if (i == 0 || i == matrix.size() - 1)
+            {
+                result[i] = 0;
+            }
+            else if ((i + 1) % 4 == 0)
+            {
+                result[i] = 4 * abs(matrix[i]);
+            }
+            else
+            {
+                result[i] = -matrix[i] * (i + 1);
+            }
         }
-        else if ((i + 1) % 4 == 0)
-        {
-            result[i] = 4 * abs(matrix[i]);
-        }
-        else
-        {
-            result[i] = -matrix[i] * (i + 1);
-        }
+        
+        std::cout << "Task 3 result: " << result.to_string() << std::endl;
     }
-    
-    return result;
-}
-
 }
