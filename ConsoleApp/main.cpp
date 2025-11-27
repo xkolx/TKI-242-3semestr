@@ -27,10 +27,15 @@ int main()
     std::cout << "Choose fill method (0 - manual, 1 - random): ";
     int choice;
     std::cin >> choice;
+
+    enum choice {
+        manual, 
+        random
+    };
     
     switch (choice)
     {
-        case 0:
+        case manual:
         {
             std::cout << "Enter " << size << " numbers:" << std::endl;
             algebra::ConstantGenerator manual_gen(algebra::MANUAL);
@@ -38,7 +43,7 @@ int main()
             generator = new algebra::ConstantGenerator(algebra::MANUAL);
             break;
         }
-        case 1:
+        case random:
         {
             std::cout << "Enter min value: ";
             int min;
