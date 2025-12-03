@@ -12,7 +12,7 @@ namespace algebra
         
     public:
         Exercise(const Matrix<int>& m, Generator* gen);
-        virtual ~Exercise();
+        virtual ~Exercise() = default;
         
         virtual void execute() = 0;
         

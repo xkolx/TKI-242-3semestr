@@ -6,9 +6,6 @@ namespace algebra
     {
     }
 
-    Exercise::~Exercise()
-    {
-    }
 
     Matrix<int> Exercise::getMatrix() const 
     { 

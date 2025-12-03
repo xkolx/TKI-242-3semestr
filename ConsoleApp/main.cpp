@@ -24,18 +24,15 @@ int main()
     algebra::Matrix<int> array(size);
     algebra::Generator* generator = nullptr;
     
+    enum FillMethod { MANUAL = 0, RANDOM = 1 };
+    
     std::cout << "Choose fill method (0 - manual, 1 - random): ";
     int choice;
     std::cin >> choice;
-
-    enum choice {
-        manual, 
-        random
-    };
     
-    switch (choice)
+    switch ((FillMethod)choice)
     {
-        case manual:
+        case MANUAL:
         {
             std::cout << "Enter " << size << " numbers:" << std::endl;
             algebra::ConstantGenerator manual_gen(algebra::MANUAL);
@@ -43,7 +40,7 @@ int main()
             generator = new algebra::ConstantGenerator(algebra::MANUAL);
             break;
         }
-        case random:
+        case RANDOM:
         {
             std::cout << "Enter min value: ";
             int min;
