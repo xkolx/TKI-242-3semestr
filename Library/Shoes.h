@@ -8,8 +8,8 @@ namespace ChildrenStore {
         std::string color;
 
     public:
-        Shoes(const std::string& name, double price, int quantity,
-              int size, const std::string& color);
+        Shoes(const std::string& name, const double price, const int quantity,
+              const int size, const std::string& color);
 
         int getSize() const;
         std::string getColor() const;

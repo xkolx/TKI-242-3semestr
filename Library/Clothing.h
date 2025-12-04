@@ -9,7 +9,7 @@ namespace ChildrenStore {
         std::string style;
 
     public:
-        Clothing(const std::string& name, double price, int quantity,
+        Clothing(const std::string& name, const double price, const int quantity,
                  const std::string& size, const std::string& color,
                  const std::string& style);
 

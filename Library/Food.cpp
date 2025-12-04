@@ -1,7 +1,7 @@
 #include "Food.h"
 
 namespace ChildrenStore {
-    Food::Food(const std::string& name, double price, int quantity,
+    Food::Food(const std::string& name, const double price, const int quantity,
                const std::string& brand)
         : Product(name, price, quantity, "Food"),
           brand(brand) {}

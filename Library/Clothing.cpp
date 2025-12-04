@@ -1,7 +1,7 @@
 #include "Clothing.h"
 
 namespace ChildrenStore {
-    Clothing::Clothing(const std::string& name, double price, int quantity,
+    Clothing::Clothing(const std::string& name, const double price, const int quantity,
                        const std::string& size, const std::string& color,
                        const std::string& style)
         : Product(name, price, quantity, "Clothing"),

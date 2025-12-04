@@ -1,8 +1,8 @@
 #include "Shoes.h"
 
 namespace ChildrenStore {
-    Shoes::Shoes(const std::string& name, double price, int quantity,
-                 int size, const std::string& color)
+    Shoes::Shoes(const std::string& name, const double price, const int quantity,
+                 const int size, const std::string& color)
         : Product(name, price, quantity, "Shoes"),
           size(size), color(color) {}
 

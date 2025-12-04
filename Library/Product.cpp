@@ -2,7 +2,7 @@
 #include <stdexcept>
 
 namespace ChildrenStore {
-    Product::Product(const std::string& name, double price, int quantity, const std::string& department)
+    Product::Product(const std::string& name, const double price, const int quantity, const std::string& department)
         : name(name), price(price), quantity(quantity), department(department) {
         if (price < 0) throw std::invalid_argument("Price cannot be negative");
         if (quantity < 0) throw std::invalid_argument("Quantity cannot be negative");
@@ -13,12 +13,12 @@ namespace ChildrenStore {
     int Product::getQuantity() const { return quantity; }
     std::string Product::getDepartment() const { return department; }
 
-    void Product::setPrice(double newPrice) {
+    void Product::setPrice(const double newPrice) {
         if (newPrice < 0) throw std::invalid_argument("Price cannot be negative");
         price = newPrice;
     }
 
-    void Product::setQuantity(int newQuantity) {
+    void Product::setQuantity(const int newQuantity) {
         if (newQuantity < 0) throw std::invalid_argument("Quantity cannot be negative");
         quantity = newQuantity;
     }
@@ -32,6 +32,10 @@ namespace ChildrenStore {
         
         if (totalPurchase > 5000.0) {
             discount += 0.05;
+        }
+        
+        if (discount > 0.15) {
+            discount = 0.15;
         }
         
         return price * (1.0 - discount);

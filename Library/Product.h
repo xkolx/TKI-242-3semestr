@@ -10,7 +10,7 @@ namespace ChildrenStore {
         std::string department;
 
     public:
-        Product(const std::string& name, double price, int quantity, const std::string& department);
+        Product(const std::string& name, const double price, const int quantity, const std::string& department);
         virtual ~Product() = default;
 
         std::string getName() const;
@@ -18,10 +18,10 @@ namespace ChildrenStore {
         int getQuantity() const;
         std::string getDepartment() const;
 
-        void setPrice(double newPrice);
-        void setQuantity(int newQuantity);
+        void setPrice(const double newPrice);
+        void setQuantity(const int newQuantity);
 
         virtual double getDiscountPrice(double totalPurchase, bool isRegularCustomer) const;
-        virtual std::string getDescription() const;
+        virtual std::string getDescription() const = 0;
     };
 }

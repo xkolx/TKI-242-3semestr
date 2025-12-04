@@ -7,7 +7,7 @@ namespace ChildrenStore {
         std::string ageRange;
 
     public:
-        Toy(const std::string& name, double price, int quantity,
+        Toy(const std::string& name, const double price, const int quantity,
             const std::string& ageRange);
 
         std::string getAgeRange() const;
