@@ -34,10 +34,6 @@ namespace ChildrenStore {
             discount += 0.05;
         }
         
-        if (discount > 0.15) {
-            discount = 0.15;
-        }
-        
         return price * (1.0 - discount);
     }
 
