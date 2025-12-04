@@ -26,12 +26,12 @@ int main()
     
     enum FillMethod { MANUAL = 0, RANDOM = 1 };
     
-    std::cout << "Choose fill method (0 - manual, 1 - random): ";
+std::cout << "Choose fill method ("<< MANUAL <<" - manual, "<< RANDOM <<" - random):";
     int choice;
     std::cin >> choice;
     
     switch ((FillMethod)choice)
-    {
+    {   
         case MANUAL:
         {
             std::cout << "Enter " << size << " numbers:" << std::endl;

@@ -7,7 +7,7 @@ namespace algebra
     Matrix<T>::Matrix() : data(nullptr), size_val(0) {}
 
     template<typename T>
-    Matrix<T>::Matrix(size_t size) : size_val(size)
+    Matrix<T>::Matrix(const size_t size) : size_val(size)
     {
         data = new T[size];
         for (size_t i = 0; i < size; i++)

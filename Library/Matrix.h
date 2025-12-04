@@ -15,7 +15,7 @@ namespace algebra
         size_t size_val;
     public:
         Matrix();
-        Matrix(size_t size);
+        Matrix(const size_t size);
         Matrix(const Matrix& other);
         ~Matrix();
         
