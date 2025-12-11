@@ -6,7 +6,7 @@ namespace algebra
     {
     public:
         Generator() {}
-        virtual ~Generator() {}
+        virtual ~Generator() = default;
         virtual int generate() = 0;
     };
 }

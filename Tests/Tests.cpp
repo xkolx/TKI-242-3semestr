@@ -7,6 +7,10 @@
 #include "../Library/Task2.h"
 #include "../Library/Task3.h"
 
+namespace algebra {
+    size_t findLastMultipleOf3(const Matrix<int>& matrix);
+}
+
 class TestRunner {
 public:
     void runAllTests() {
@@ -59,6 +63,19 @@ private:
         matrix[1] = 4;
         matrix[2] = 6;
         
+        size_t last_index = algebra::findLastMultipleOf3(matrix);
+        assert(last_index == 2);
+        
+        algebra::ConstantGenerator dummyGen(algebra::MANUAL);
+        algebra::Task1 task1(matrix, &dummyGen);
+        
+        std::ostringstream output;
+        auto oldCout = std::cout.rdbuf(output.rdbuf());
+        task1.execute();
+        std::cout.rdbuf(oldCout);
+        
+        std::string result = output.str();
+        assert(result.find("Task 1 result: { 3, 4, 0 }") != std::string::npos);
         
         std::cout << "Task1 tests passed!" << std::endl;
     }
@@ -74,7 +91,18 @@ private:
         std::istringstream input("99");
         auto oldCin = std::cin.rdbuf(input.rdbuf());
         
+        std::ostringstream output;
+        auto oldCout = std::cout.rdbuf(output.rdbuf());
+        
+        algebra::ConstantGenerator dummyGen(algebra::MANUAL);
+        algebra::Task2 task2(matrix, &dummyGen);
+        task2.execute();
+        
         std::cin.rdbuf(oldCin);
+        std::cout.rdbuf(oldCout);
+        
+        std::string result = output.str();
+        assert(result.find("Task 2 result: { 1, 2, 99, 3 }") != std::string::npos);
         
         std::cout << "Task2 tests passed!" << std::endl;
     }
@@ -86,6 +114,18 @@ private:
         matrix[0] = 2;
         matrix[1] = 3;
         matrix[2] = 4;
+        
+        std::ostringstream output;
+        auto oldCout = std::cout.rdbuf(output.rdbuf());
+        
+        algebra::ConstantGenerator dummyGen(algebra::MANUAL);
+        algebra::Task3 task3(matrix, &dummyGen);
+        task3.execute();
+        
+        std::cout.rdbuf(oldCout);
+        
+        std::string result = output.str();
+        assert(result.find("Task 3 result: { 0, -6, 0 }") != std::string::npos);
         
         std::cout << "Task3 tests passed!" << std::endl;
     }
