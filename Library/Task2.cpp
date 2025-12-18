@@ -17,7 +17,7 @@ namespace algebra
         Matrix<int> result(matrix.size() + count_even);
         
         std::cout << "Enter number K: ";
-        int K;
+        int K = 0;
         std::cin >> K;
         
         size_t j = 0;

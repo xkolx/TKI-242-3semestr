@@ -1,5 +1,6 @@
 #include "Matrix.h"
 #include <sstream>
+#include <utility>
 
 namespace algebra 
 {
@@ -27,9 +28,48 @@ namespace algebra
     }
 
     template<typename T>
+    Matrix<T>::Matrix(Matrix&& other) noexcept 
+        : data(other.data), size_val(other.size_val)
+    {
+        other.data = nullptr;
+        other.size_val = 0;
+    }
+
+    template<typename T>
     Matrix<T>::~Matrix()
     {
         delete[] data;
+    }
+
+    template<typename T>
+    Matrix<T>& Matrix<T>::operator=(const Matrix& other)
+    {
+        if (this != &other)
+        {
+            delete[] data;
+            size_val = other.size_val;
+            data = new T[size_val];
+            for (size_t i = 0; i < size_val; i++)
+            {
+                data[i] = other.data[i];
+            }
+        }
+        return *this;
+    }
+
+    template<typename T>
+    Matrix<T>& Matrix<T>::operator=(Matrix&& other) noexcept
+    {
+        if (this != &other)
+        {
+            delete[] data;
+            data = other.data;
+            size_val = other.size_val;
+            
+            other.data = nullptr;
+            other.size_val = 0;
+        }
+        return *this;
     }
 
     template<typename T>

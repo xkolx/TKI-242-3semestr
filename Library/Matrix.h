@@ -17,7 +17,10 @@ namespace algebra
         Matrix();
         Matrix(const size_t size);
         Matrix(const Matrix& other);
+        Matrix(Matrix&& other) noexcept;
         ~Matrix();
+        Matrix& operator=(const Matrix& other);
+        Matrix& operator=(Matrix&& other) noexcept;
         
         T& operator[](size_t index);
         const T& operator[](size_t index) const;
